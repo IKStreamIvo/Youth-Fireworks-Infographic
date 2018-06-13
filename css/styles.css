@@ -1,0 +1,203 @@
+body {
+    background-color: rgb(19, 8, 51);
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+    user-select: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1, h2, h3 {
+    color: white;
+    margin-bottom: 0;
+    padding: 0;
+}
+h1 {
+    font-size: 40px;
+    text-align: center;
+}
+h2 {
+    font-size: 24px;
+    text-align: center;
+}
+h3 {
+    position: absolute;
+    font-size: 24px;
+    text-align: center;
+    top: 5%;
+    left: 75%;
+}
+
+main {
+    display: flex;
+    font-size: 16px;
+    position: absolute;
+    top: 250px;
+    left: 20px;
+    width: fit-content;
+}
+
+tr {
+    display: flex;
+    align-items: center;
+}
+
+td {
+    margin: 5px;
+    padding-top: 15px;
+}
+
+#graph {
+    vertical-align: middle;
+    align-items: center;
+    transform: rotate(-30deg);
+    position: relative;
+}
+
+td.text {
+    transform: rotate(30deg);
+    color: white;
+    position: relative;
+    left: 10px;
+    top: 9px;
+    border-radius: 100%;
+} 
+
+.ageBar {
+    width: 750px;
+    height: 14px;
+    white-space: nowrap;
+}
+
+#fillme {
+    background-image: url("../img/rocket-base_big.png");
+    background-repeat: repeat;
+    background-size: contain;
+    width: 0%; /*this gets changed based on values from dataset*/
+    border: solid 1.5px;
+    float: left;
+}
+
+.ageBar #amount {
+    position: relative;
+    float: right;
+    left: -5px;
+    color: black;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 3px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px gray;
+}
+
+#rocket {
+    max-height: 325%;
+    position: relative;
+    left: -3px;
+    top: -6px;
+}
+
+/* Gender Buttons */
+.genderOption {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+}
+
+#maleConstelation, #femaleConstelation {
+    margin: 0 auto;
+    padding: 0;
+    width: 20%;
+    position: absolute;
+}   
+
+#maleConstelation {
+    top: 20%;
+    left: 55%;
+    animation: pulseSmall 20s infinite;
+}
+
+#femaleConstelation {
+    top: 45%;
+    left: 75%;
+    animation: pulseSmall 30s infinite;
+}
+
+.star:nth-child(odd) .constStar {
+    animation: fade 10s infinite;
+}
+.star:nth-child(even) .constStar {
+    animation: fade 5s infinite;
+}
+
+.constLine, .constStar {
+    fill: rgb(224, 194, 94);
+}
+
+.constLine {
+    opacity: 0.80;
+    animation: lineFade 15s infinite;
+}
+
+div.star {
+    z-index: -1;
+}
+div.star:nth-child(even) {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    width: 3%;
+    animation: pulseBig 10s infinite;
+}
+div.star:nth-child(odd) {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    width: 2%;
+    animation: pulseSmall 10s infinite;
+}
+
+.particle {
+    width: 25px;
+    height: 25px;
+}
+
+/* Keyframes */
+@keyframes pulseBig {
+    50% {
+        transform: scale(.8);
+    }
+    0%, 100% {
+        transform: scale(1.2);
+    }
+}
+@keyframes pulseSmall {
+    0%, 100% {
+        transform: scale(.9);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes fade {
+    0%, 100% {
+        opacity: .4;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes lineFade {
+    0%, 100% {
+        opacity: .4;
+    }
+    50% {
+        opacity: .8;
+    }
+}
